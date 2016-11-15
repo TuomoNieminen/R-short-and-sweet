@@ -154,7 +154,7 @@ success_msg("Very good work!")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:cdc8167255
 
 ## Indices and brackets
 
@@ -234,7 +234,7 @@ success_msg("Such indices. Wow. Much intelligent.")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:fd9977b86d
 
 ## Easy vectors
 
@@ -333,7 +333,7 @@ success_msg("Great work!")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:dd36a10fa0
 
 ## Logical comparison
 
@@ -428,7 +428,7 @@ success_msg("Well done! Remember Spock's words: Logic is the beginning of wisdom
 
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:2eebe0d715
 
 ## Logical operators
 
@@ -519,7 +519,7 @@ success_msg("Excellent! You are the operator indeed.")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:ca4352832b
 ## Packages in R
 
 There are a lot of functions in R. But actually, the functions in R come from a standard set of *packages*. A package is simply a collection of R functions. Besides the basic packages, you can install and use (or develop!) other packages too. 
@@ -598,7 +598,7 @@ success_msg("You have the keys do anything. Awesome!")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:5935ba749b
 ## Looping
 
 In programming, often there is the need to repeat an action multiple times. In statistical programming you might for example have a theory you wish to explore by simulation.
