@@ -14,7 +14,7 @@ Researchers and experts often use programming to visualize and explore data and 
 Follow the instructions below to complete the exercise.
 
 *** =instructions
-- Take a peek at the code written on the right in script.R. When you opened this exercise, the code gave R the instructions to (1) load a dataset and (2) produce the graphic next to it.
+- Take a peek at the code written on the right in script.R. When you opened this exercise, the code gave your computer the instructions to (1) load a dataset and (2) produce the graphic next to it.
 - Could you tell which lines of code relates to (1) or (2)? Hint: A hashtag marks a line as a comment line.
 - When you're done pondering, simply click 'Submit Answer' and move on to the first exercise!
 
@@ -41,7 +41,7 @@ data_url <- "http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS-data.txt"
 # Load and save data with the read.table() function
 students2014 <- read.table(data_url, sep = "\t", header = TRUE)
 
-# Draw a graph of student shoesize and hight using plot()
+# Draw a graph of student shoesize and height using plot()
 with(students2014, plot(x = kenka, y = pituus, col = sukup, pch = 20, main = "Scatter plot of student shoesize and height \n(color indicates sex)"))
 
 
@@ -57,7 +57,7 @@ data_url <- "http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS-data.txt"
 # Load and save data with the read.table() function
 students2014 <- read.table(data_url, sep = "\t", header = TRUE)
 
-# Draw a graph of student shoesize and hight using plot()
+# Draw a graph of student shoesize and height using plot()
 with(students2014, plot(x = kenka, y = pituus, col = sukup, pch = 20, main = "Scatter plot of student shoesize and height \n(color indicates sex)"))
 
 ```
@@ -70,7 +70,7 @@ success_msg("Great! Move on to the first exercise.")
 --- type:NormalExercise lang:r xp:100 skills:1
 ## Basic tools
 
-On your right you see the R editor area - the script - and below that the R console. The editor area is just a simple text editor where you write code - just like text.
+On your right you see the R editor area - the script.R - and below that the R console. The editor area is just a simple text editor where you write code - just like text.
 
 You can first write code to the editor area and then tell R that you want to execute a line of code where your cursor currently is by pressing `Ctrl + Enter` (`Cmd + Enter` on a mac). Input and output will then appear in the console.
 
@@ -210,9 +210,9 @@ success_msg("Great work! Head over to the next exercise.")
 ## Objects
 
 Here's where things start to get interesting. In R you can create and operate on things called *objects*. 
-An object is something that can store information such as numerical values and names. Once an object is created, it will be stored in memory and the information it contains will be available to you later.
+An object is something that can store information such as multiple numerical values and names. Once an object is created, it will be stored in memory and the information it contains will be available to you later.
 
-Objects are created using the assign operator: `<-` (< and -). The value of an object can be printed by typing it's name.
+Objects are created using the assign operator: `<-` (< and -). The contents of an object can be printed by typing it's name.
 
 
 *** =instructions
@@ -380,12 +380,14 @@ success_msg("Excellent! You are making great progress.")
 --- type:NormalExercise lang:r xp:100 skills:1
 ## Good arguments
 
-During this course you will operate on many of R's ready-made functions. As we already saw, functions take objects as their arguments and then perform actions using the objects. Using a function is called *calling* it.
+During this course you will operate on R's ready-made functions. As you already saw, functions take objects as their arguments and then perform actions using the objects. Using a function is called *calling* it.
 
-Functions usually have more than one possible argument. Some of them can have default values and others need to be specified. The arguments have names, which can (and often should) be used when specifying their values. The recommended style is to specify all but the first argument by name, when calling a function.
+Functions usually have more than one possible argument. Some of the arguments can have default values and others need to be specified. The arguments have names, which can (and often should) be used when specifying their values. The recommended style is to specify all but the first argument by name, when calling a function.
+
+Multiple arguments are separated with a comma.  
 
 *** =instructions
-- Execute the example codes where the function `head()` is used to explore the first couple observations in the `students2014` dataset.
+- Execute the example codes where the function `head()` is used to explore the first couple observations of the `students2014` dataset.
 - Create object `first_ten_students` by calling `head()` with `n = 10`.
 
 *** =hint
@@ -467,7 +469,7 @@ success_msg("Great job!")
 
 In R, the basic idea is to use *functions* to operate on objects. The most common object to operate on is the `data frame` object, which stores data in tabular form.  
 
-The columns in data frames are vectors. Data frames can contain multiple vectors with different data types. In this chapter you will learn more about vectors and data types.
+The columns in data frames are vectors. Data frames can contain multiple vectors with different data types. You will soon learn more about vectors and data types.
 
 Here you will get to apply some functions that are helpful for inspecting data: `head()` and `str()`. You will also learn how to access the columns of a data frame using the $-sign.  
 
@@ -503,7 +505,7 @@ students2014$kenka <- as.numeric(students2014$kenka)
 ```{r}
 # students2014 is available
 
-# Let's view the first 6 students from the course participants data
+# Let's view the first 6 students from the students2014 data
 head(students2014)
 
 # View the structure of students2014
@@ -521,7 +523,7 @@ students2014$ika
 ```{r}
 # students2014 is available
 
-# Let's view the first 6 students from the course participants data
+# Let's view the first 6 students from the students2014 data
 head(students2014)
 
 # View the structure of students2014
@@ -549,7 +551,7 @@ success_msg("Good work!")
 --- type:NormalExercise lang:r xp:100 skills:1
 ## Data types (1)
 
-In this section you learn about the data types in R. You will also get familiar with vectors and their usage. What does data types and vectors have to do with each other? A lot, you'll see! 
+In these next exercises you wil learn about the data types in R. You will also get familiar with vectors and their usage. What do data types and vectors have to do with each other? A lot, you'll see! 
 
 There are different data types in R. The most commonly used are:
 
@@ -557,14 +559,14 @@ There are different data types in R. The most commonly used are:
 - Text or character values are called **characters**
 - [Boolean values](https://en.wikipedia.org/wiki/Boolean_data_type) (`TRUE` or `FALSE`) are called **logical**
 
-When creating character values, one needs to use quotation marks (both `' '` and `" "` will work). For example `"Statistics<3"` would be a character value in R. Numeric and boolean values do not need quotation marks. 
+When creating character values, one needs to use quotation marks (both `' '` and `" "` will work). For example `"Statistics<3"` would be a character value in R. Numeric and boolean values do not need quotation marks. Boolean values `TRUE` and `FALSE` can be abbreviated with `T` and `F`.  
 
 You can use the function `str()` (str is short for structure) to find out what data type the object is.
 
 *** =instructions
 - Create character object `my_character` by assigning your initials in it.
 - Assign the number 10.5 in `my_numeric_object`. Note that the decimal separator in R is dot instead of comma. 
-- Create the object `my_boolean` by executing the line. Note that when creating boolean values, no quotation marks are needed.
+- Create the object `my_boolean` by executing the line. Note that with boolean values, no quotation marks are needed.
 - Change the value of `my_boolean` to `TRUE`
 - Inspect the data types of the objects with `str()`.
 
@@ -580,27 +582,30 @@ You can use the function `str()` (str is short for structure) to find out what d
 
 *** =sample_code
 ```{r}
-# Create objects with different data types
+# Create three objects with different data types
 my_character <-
 my_numeric_object <-
 my_boolean <- FALSE
 
-# See how the objects look with the function str()
+# See how each object looks with the function str()
+
+
 
 
 ```
 
 *** =solution
 ```{r}
-# Create objects with different data types
+# Create three objects with different data types
 my_character <- "A.B.C."
 my_numeric_object <- 10.5
 my_boolean <- TRUE
 
-# See how the objects look with the function str()
+# See how each object looks with the function str()
 str(my_character)
 str(my_numeric_object)
 str(my_boolean)
+
 ```
 
 *** =sct
@@ -623,7 +628,7 @@ success_msg("You're making great progress, well done!")
 --- type:NormalExercise lang:r xp:100 skills:1
 ## Data types (2)
 
-One of R's data types is called factor. Factors contain numbers, but for every number there is a character value associated to it. A variable measured by the [Likert scale](https://en.wikipedia.org/wiki/Likert_scale) could for example be coded as a factor: the values are numbers from 1 to 5, but the numbers also have words attached to them such as:
+Another one of R's data types is called factor. Factors contain numbers, but for every number there is a character value associated to it. A variable measured by the [Likert scale](https://en.wikipedia.org/wiki/Likert_scale) could for example be coded as a factor: the values are numbers from 1 to 5, but the numbers also have words attached to them such as:
 
 - "Strongly disagree" = 1
 - "Strongly agree" = 5
@@ -720,15 +725,13 @@ success_msg("Good work!")
 
 A vector is an object containing multiple elements of the same data type. Vectors are quite important in R. The columns of a data frame (such as `student2014`) are vectors.
 
-You can also create vectors by combining values of the same data type, using the function `c()`. 
-
-In this exercise you will learn how to create your own vector.
+You can create vectors by combining values of the same data type, using the function `c()`. In this exercise you will create your own vectors.  
 
 *** =instructions
 - See and execute the examples on how to create a vector with `c()`.
 - Create a character vector `my_vector`.
-- Create a vector `boolean_vector` with boolean values `TRUE, FALSE, TRUE, FALSE`.
-- Print the contents of `boolean_vector`.
+- Create a vector `logical_vector` with boolean values `TRUE, FALSE, TRUE, FALSE`.
+- Print the contents of `logical_vector`.
 
 *** =hint
 - When creating boolean values, no quotation marks are needed.
@@ -751,7 +754,8 @@ c(0.1, 0.2, 5.84, 0.7)
 # Let's create one with characters and save it to a object
 my_vector <- c("a", "b", "c", "d")
 
-# Create boolean vector and print it
+# Create a logical vector and print it
+
 
 
 ```
@@ -767,17 +771,17 @@ c(0.1, 0.2, 5.84, 0.7)
 # Let's create one with characters and save it to a object
 my_vector <- c("a", "b", "c", "d")
 
-# Create boolean vector and print it
-boolean_vector <- c(TRUE, FALSE, TRUE, FALSE)
-boolean_vector
+# Create a logical vector and print it
+logical_vector <- c(TRUE, FALSE, TRUE, FALSE)
+logical_vector
 
 ```
 
 *** =sct
 ```{r}
 
-test_object("boolean_vector", incorrect_msg = "Did you create `boolean_vector` with same values as instructed?")
-test_output_contains("boolean_vector", incorrect_msg = "Did you print the contents of `boolean_vector`?")
+test_object("logical_vector", incorrect_msg = "Did you create `logical_vector` with same values as instructed?")
+test_output_contains("logical_vector", incorrect_msg = "Did you print the contents of `logical_vector`?")
 test_error()
 
 # Final message the student will see upon completing the exercise
