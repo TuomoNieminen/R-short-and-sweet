@@ -3,7 +3,7 @@ title       : Gettin jiggy with it
 description : More advanced stuff
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:7fa7ad358b
 ## Help() !
 
 There are many functions in R. It is often hard to remember all the argument names and details of the functions. Luckily, every single function has a help page. Using the help pages is part of using R.
@@ -74,7 +74,7 @@ success_msg("Very good work!")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1, 3
+--- type:NormalExercise lang:r xp:100 skills:1, 3 key:8d3c2b3c6c
 ## Summary() statistics
 
 Some functions in R are very generic. They can take different objects as their first argument and they seem to magically do exactly what you'd hope they do in all situations.
@@ -155,7 +155,7 @@ success_msg("Well done!")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:5935ba749b
 
 ## Looping
 
@@ -249,7 +249,7 @@ success_msg("Excellent work! Repetition is the key to success :)")
 
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:ca4352832b
 
 ## Packages in R
 
@@ -330,7 +330,7 @@ success_msg("You have the keys do anything. Awesome!")
 
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:270eda4b95
 
 ## Create your own functions
 
