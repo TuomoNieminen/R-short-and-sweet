@@ -2,7 +2,7 @@
 title       : R and statistics
 description : Basics of R, the amazing statistical programming language. Do not be afraid of the art of programming!
 
---- type:NormalExercise lang:r xp:50 skills:1 
+--- type:NormalExercise lang:r xp:50 skills:1  key:a253f2e756
 ## What is R?
 
 R is a programming language designed for statistical analysis. R is completely open source and all analysis done with R are reproduciple and easy to share. R is flexible, powerful and includes implementations of the latest research. 
@@ -67,7 +67,7 @@ with(students2014, plot(x = kenka, y = pituus, col = sukup, pch = 20, main = "Sc
 success_msg("Great! Move on to the first exercise.")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:cdaeb146ec
 ## Basic tools
 
 On your right you see the R editor area - the script.R - and below that the R console. The editor area is just a simple text editor where you write code - just like text.
@@ -133,7 +133,7 @@ success_msg("Great work! You have now executed your first line of code :)")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:a6d98b0c0b
 ## Arithmetics
 
 Let's continue with something simple. R can do amazing things like scrape websites and draw beautiful graphics but it can also do basic calculations. Consider the following arithmetic operators:
@@ -206,7 +206,7 @@ test_output_contains("2^5", incorrect_msg = "The exponentiation example is not c
 success_msg("Great work! Head over to the next exercise.")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 
+--- type:NormalExercise lang:r xp:100 skills:1  key:aac1b8c5d1
 ## Objects
 
 Here's where things start to get interesting. In R you can create and operate on things called *objects*. 
@@ -290,7 +290,7 @@ success_msg(paste0("Great job ", my_name, ". ", my_message, "!"))
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:dc84cbe247
 ## Functions
 
 In R you operate on objects using *functions*. A function is a special kind of object that can be *called* by typing it's name and giving it the necessary *arguments* inside parenthesis. When a function is called, it will perform an action.
@@ -377,7 +377,7 @@ success_msg("Excellent! You are making great progress.")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:dc76ff838a
 ## Good arguments
 
 During this course you will operate on R's ready-made functions. As you already saw, functions take objects as their arguments and then perform actions using the objects. Using a function is called *calling* it.
@@ -464,7 +464,7 @@ success_msg("Great job!")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:a8d5dff737
 ## Data frames
 
 In R, the basic idea is to use *functions* to operate on objects. The most common object to operate on is the `data frame` object, which stores data in tabular form.  
@@ -548,7 +548,7 @@ success_msg("Good work!")
 
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:792094dea8
 ## Data types (1)
 
 In these next exercises you wil learn about the data types in R. You will also get familiar with vectors and their usage. What do data types and vectors have to do with each other? A lot, you'll see! 
@@ -625,7 +625,7 @@ test_error()
 success_msg("You're making great progress, well done!")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:02be1c797a
 ## Data types (2)
 
 Another one of R's data types is called factor. Factors contain numbers, but for every number there is a character value associated to it. A variable measured by the [Likert scale](https://en.wikipedia.org/wiki/Likert_scale) could for example be coded as a factor: the values are numbers from 1 to 5, but the numbers also have words attached to them such as:
@@ -720,7 +720,7 @@ success_msg("Good work!")
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:1 key:dc3cc379e2
 ## Vectors
 
 A vector is an object containing multiple elements of the same data type. Vectors are quite important in R. The columns of a data frame (such as `student2014`) are vectors.
