@@ -1,5 +1,5 @@
 ---
-title       : R and statistics
+title       : Hello R
 description : Basics of R, the amazing statistical programming language. Do not be afraid of the art of programming!
 
 --- type:NormalExercise lang:r xp:50 skills:1  key:a253f2e756
@@ -788,3 +788,4 @@ test_error()
 success_msg("Great work!")
 
 ```
+
