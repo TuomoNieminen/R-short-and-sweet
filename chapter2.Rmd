@@ -155,6 +155,374 @@ success_msg("Well done!")
 ```
 
 
+
+--- type:NormalExercise lang:r xp:100 skills:1
+
+## Logical comparison
+
+Logical conditions are generally important in programming tasks. Logical comparison creates logical vectors, which can for example be used to select subsets of data. 
+
+The logical comparison operators in R are:  
+
+operator  | description
+----------|------------
+`==`      | exactly equal to
+`!=`      | not equal to
+`<`       | less than
+`>`       | greater than
+`<=`      | less or equal to
+`>=`      | greater or equal to
+
+Follow the instructions below to complete the exercise. Take your time, this might not be a quick exercise.
+
+*** =instructions
+- Execute and study the example codes
+- Add to the row with `c("a","b","c")`: select a suitable logical comparison operator and a suitable comparison value to produce a result vector `FALSE, FALSE, TRUE`
+- Add to the row with `c(1,3,2)`: select a suitable logical comparison operator and a suitable comparison value to produce a result vector `TRUE, FALSE, TRUE`
+- Bonus: can you think of other ways of achieving the same results?
+
+*** =hint
+- The third example should point you in the right direction
+- If you're uncertain, just choose a comparison value and try out a bunch of different operators to figure out what might work.
+
+
+*** =pre_exercise_code
+```{r}
+# no pec
+```
+
+*** =sample_code
+```{r}
+# In the comments below: T = TRUE, F = FALSE
+# (R also understands these abbreviations)
+
+# Exactly equal
+5 == 5 # TRUE
+
+# Not equal
+"cat" != "dog" # TRUE
+
+# Greater or equal 3 times
+c(0,1,2) >= 1 # F, T, T
+
+# Use logical comparison to produce a result F, F, T
+c("a","b","c")
+
+# Use logical comparison to produce a result T, F, T
+c(1, 3, 2)
+
+
+```
+
+*** =solution
+```{r}
+# In the comments below: T = TRUE, F = FALSE
+# (R also understands these abbreviations)
+
+# Exactly equal
+5 == 5 # TRUE
+
+# Not equal
+"cat" != "dog" # -> TRUE
+
+# Greater or equal 3 times
+c(0,1,2) >= 1 # F,T,T
+
+# Use logical comparison to produce a result F,F,T
+c("a","b","c") == "c"
+
+# Use logical comparison to produce a result T,F,T
+c(1,3,2) < 3
+
+```
+
+*** =sct
+```{r}
+# submission correctness tests
+
+# example tests:
+test_output_contains("c('a','b','c')=='c'", incorrect_msg = "Please make the necessary adustments to produce the output FALSE FALSE TRUE")
+
+test_output_contains("c(1,3,2)<3", incorrect_msg = "Please make the necessary adustments to produce the output TRUE FALSE TRUE")
+
+# test if the students code produces an error
+test_error()
+
+# Final message the student will see upon completing the exercise
+success_msg("Well done! Remember Spock's words: Logic is the beginning of wisdom, not the end.")
+
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1
+
+## Logical operators
+
+Logical conditions can be combined with the following logical operators:
+  
+  operator              | description
+----------------------- | -----------
+  `!`a                  | NOT a
+a `&` b                 | a AND b
+a <code>&#124;</code> b | a OR b  
+  
+Logical operators work like logical conditions: they compare the elements of vectors one at a time and can produce logical vectors.
+
+So, for example `F & T` evaluates to `FALSE` and `F | T` evaluates to `TRUE`. Therefore `c(F, T) & c(T, T)` produces a logical vector `FALSE TRUE`.
+
+It is also possible to use parenthesis to control the evaluation of the operators. See how this works from the example codes.
+
+*** =instructions
+- Create and print out four subsets of the learning2014 data matching the following conditions. Use the `subset()` function.  
+- (gender is male, "M") AND (deep learning is greater than 4.5)
+- (age is 25 OR age is 26) AND (attitude is greater than 3.5)
+- (gender is female, "N") AND (strategic learning is greater than 4.5)
+- (deep learning is more than 4) AND (points is zero OR points is greater than 30)
+
+*** =hint
+- The instructions show the correct use of parenthesis when using the logical operators and conditions
+- Note that females are coded with "N", not "F".  
+- Note that the logical equals is `==`, not `=`.
+
+
+*** =pre_exercise_code
+```{r}
+learning2014 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
+
+```
+
+*** =sample_code
+```{r}
+# learning2014 is available
+
+# male students who scored very high on deep learning
+subset(learning2014, (gender == "M") & (deep > 4.5))
+
+# 25 or 26 old students who scored high on attitude
+subset(learning2014, (age == 25 | age == 26) & (attitude > 3.5))
+
+# female students who scored very high on strategic learning
+
+
+# students who scored high on deep learning for whom points is 0 or greater than 30
+
+
+
+```
+
+*** =solution
+```{r}
+# learning2014 is available
+
+# male students who scored very high on deep learning
+subset(learning2014, (gender == "M") & (deep > 4.5))
+
+# 25 or 26 old students who scored high on attitude
+subset(learning2014, (age == 25 | age == 26) & (attitude > 3.5))
+
+# female students who scored very high on strategic learning
+subset(learning2014, (gender == "N") & (stra > 4.5))
+
+# students who scored high on deep learning for whom points is 0 or greater than 30
+subset(learning2014, deep > 4 & (points == 0 | points > 30))
+
+
+```
+
+*** =sct
+```{r}
+# submission correctness tests
+
+test_output_contains("subset(learning2014,(gender=='N')&(stra>4.5))", incorrect_msg="Please print out the subset containing the female students with high strategic learning scores")
+test_output_contains("subset(learning2014,deep>4&(points==0|points>30))", incorrect_msg="Please print out the subset containing the students who scored high on deep learning and had either no points or very high points")
+
+# test if the students code produces an error
+test_error()
+
+# Final message the student will see upon completing the exercise
+success_msg("Excellent! You are the operator indeed.")
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1
+
+## Indices and brackets
+
+Vectors in R store multiple values of the same data type. The values in vectors have indices: the first value in a vector has a index `1`, the second value `2` and so on. 
+
+You can set or get a single value from a vector by using indices and brackets `[ ]`. Using an index number inside the brackets gives access to a single value from the vector. Using a vector of indices gives access to multiple values (another vector). 
+
+It is also possible to rearrange the values in a vector by using indices. Look at the example code to see how indices work. 
+
+*** =instructions
+- Create the `names` vector.
+- See how the indices work by executing the example lines.
+- Use brackets and indices on `names` to create a new vector `girls` with values "Liisa" and "Anna" (in that order).
+- Use brackets and indices on `names` to create a new vector `boys` with values "Pekka" and "Heikki" (in that order).
+
+*** =hint
+- Note that space between the vector object and bracets produces an error.
+- Index vectors `c(1,2)` and `c(2,1)` do not produce the same outcome. The order of the values is different.
+
+*** =pre_exercise_code
+```{r}
+```
+
+
+*** =sample_code
+```{r}
+# Let's create a vector
+names <- c("Matti", "Pekka", "Liisa", "Anna")
+
+# Acess the first value of the vector
+names[1]
+
+# Change the first value of the vector
+names[1] <- "Heikki"
+
+# Acess the 1. and 3. value of the vector
+names[c(1, 3)]
+
+# Use indices and brackets to separate the names vector into two vectors of the specified ordering
+girls <-
+boys <-
+
+
+  ```
+
+*** =solution
+```{r}
+# Let's create a vector
+names <- c("Matti", "Pekka", "Liisa", "Anna")
+
+# Acess the first value of the vector
+names[1]
+
+# Change the first value of the vector
+names[1] <- "Heikki"
+
+# Acess the 1. and 3. value of the vector
+names[c(1, 3)]
+
+# Use indices and brackets to separate the names vector into two vectors of the specified ordering
+girls <- names[c(3, 4)]
+boys <- names[c(2, 1)]
+
+```
+
+*** =sct
+```{r}
+
+test_object("girls", incorrect_msg = "Did you create `girls`?")
+test_object("boys", incorrect_msg = "Did you create `boys`? Are the values in the correct order?")
+
+test_error()
+
+# Final message the student will see upon completing the exercise
+success_msg("Such indices. Wow. Much intelligent.")
+
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1
+
+## Easy vectors
+
+Sometimes you need a very long index vector. In that case it would be a lot of work to create the vector by combining integer values with `c()`. Luckily, there are convenient ways to create long vectors in R.
+
+For integer values, a specially useful one is the method `start:end`, which creates an integer vector with all the values from start to end. The following two lines hence produce identical results
+
+```
+1:5  
+c(1,2,3,4,5)
+```
+
+
+*** =instructions
+- Create an integer vector with values from 1 to 5.
+- Create an integer vector with even values from 2 to 10.
+- Create object `attitude` and give the values in it names matching the indices.
+- Access index values 1-5 of `attitude`
+- Use `:` to create an integer vector with the values 1, 2, ..., 10
+- Access every second value of the `attitude` vector, starting from the 2. value until the 20th value. These values correspond to the even numbered indeces of the vector: 2, 4, .. , 20
+
+*** =hint
+- First you will need an index vector with values 2, 4, .. , 20. The example shows how to create such a vector
+- You can then use the index vector together with brackets (`[ ]`) to complete the task
+
+
+*** =pre_exercise_code
+```{r}
+learning2014 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
+```
+
+*** =sample_code
+```{r}
+# learning2014 is available
+
+# Create an integer vector with values 1,2,..,5
+1:5
+
+# Create an integer vector with even values 2, 4, .. , 10
+(1:5)*2
+
+# Create object attitude and give the data points names 1, 2, ..
+attitude <- learning2014$attitude
+names(attitude) <- 1:length(attitude)
+
+# Access the values 5 - 10 of attitude
+attitude[5:10]
+
+# Create an integer vector with values 1,2,..,10
+
+
+# Access every second value of attitude from 2. to the 20th index
+
+
+```
+
+*** =solution
+```{r}
+# learning2014 is available
+
+# Create an integer vector with values 1,2,..,5
+1:5
+
+# Create an integer vector with even values
+(1:5)*2
+
+# Create object attitude and give the data points names 1, 2, ..
+attitude <- learning2014$attitude
+names(attitude) <- 1:length(attitude)
+
+# Access the values 5 - 10 of attitude
+attitude[5:10]
+
+# Create an integer vector with values 1,2,..,10
+1:10
+
+# Access every second value of attitude from 2. to the 20th index
+attitude[(1:10)*2]
+
+
+```
+
+*** =sct
+```{r}
+# submission correctness tests
+
+test_student_typed("1:10", not_typed_msg = "Did you use `:` to create and print out the specified integer vector?")
+test_output_contains("attitude[(1:10)*2]")
+
+# test if the students code produces an error
+test_error()
+
+# Final message the student will see upon completing the exercise
+success_msg("Great work!")
+
+```
+
+
 --- type:NormalExercise lang:r xp:100 skills:1
 
 ## Looping
@@ -245,8 +613,6 @@ test_error()
 success_msg("Excellent work! Repetition is the key to success :)")
 
 ```
-
-
 
 
 --- type:NormalExercise lang:r xp:100 skills:1
