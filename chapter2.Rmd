@@ -1,0 +1,408 @@
+---
+title       : Gettin jiggy with it
+description : More advanced stuff
+
+
+--- type:NormalExercise lang:r xp:100 skills:1
+## Help() !
+
+There are many functions in R. It is often hard to remember all the argument names and details of the functions. Luckily, every single function has a help page. Using the help pages is part of using R.
+
+The help page of a function called *func* can be opened by two methods: `help(func)` or `?func`.
+
+
+*** =instructions
+- Open the help page of `plot` by writing `?plot` directly to the console and press enter.
+- Draw a scatter plot of student shoesize versus height, with height on the y axis. 
+- Use the information on the help page and make the following adjustments to the plot:
+- Add this main title: "Scatter plot of student shoesize versus height".
+
+
+*** =hint
+- Please note that the tests are sensitive to capital letters and missing spaces etc.
+
+
+*** =pre_exercise_code
+```{r}
+# load data from web
+students2014 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS-data.txt", sep="\t", header=TRUE)
+# keep a couple background variables
+students2014 <- students2014[,c("sukup","toita","ika","pituus","kenka","kone")]
+# recode kone variables missing values as factor levels
+students2014$kone <- addNA(students2014$kone)
+# keep only rows without missing values
+students2014 <- students2014[complete.cases(students2014),]
+# integers to numeric
+students2014$ika <- as.numeric(students2014$ika)
+students2014$pituus <- as.numeric(students2014$pituus)
+students2014$kenka <- as.numeric(students2014$kenka)
+
+```
+
+*** =sample_code
+```{r}
+# Create objects shoesize and height
+shoesize <- students2014$kenka
+height <- students2014$pituus
+
+# Draw a scatterplot of shoesize and height
+
+
+
+```
+
+*** =solution
+```{r}
+# Create objects shoesize and height
+shoesize <- students2014$kenka
+height <- students2014$pituus
+
+# Draw a scatterplot of shoesize and height
+plot(shoesize, height, main = "Scatter plot of student shoesize versus height")
+
+
+
+```
+
+*** =sct
+```{r}
+
+test_function("plot",args = c("x","y","main"))
+
+test_error()
+success_msg("Very good work!")
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1, 3
+## Summary() statistics
+
+Some functions in R are very generic. They can take different objects as their first argument and they seem to magically do exactly what you'd hope they do in all situations.
+
+One such example is the `summary()` function. Depending on the type of data object it receives as it's first argument, `summary()` will produce different convenient results. 
+
+*** =instructions
+- Execute the code that creates a summary of `sukup`. What does it show you?
+- Execute the code that creates a summary of `ika`. What does it show you?
+- Create a summary of `pituus` in `students2014`.
+- Create a summary of the object `students2014`.
+
+*** =hint
+- Use the `$` -sign to access `pituus` in `students2014`.
+
+*** =pre_exercise_code
+```{r}
+# load data from web
+students2014 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS-data.txt", sep="\t", header=TRUE)
+# keep a couple background variables
+students2014 <- students2014[,c("sukup","toita","ika","pituus","kenka","kone")]
+# recode kone variables missing values as factor levels
+students2014$kone <- addNA(students2014$kone)
+# keep only rows without missing values
+students2014 <- students2014[complete.cases(students2014),]
+# integers to numeric
+students2014$ika <- as.numeric(students2014$ika)
+students2014$pituus <- as.numeric(students2014$pituus)
+students2014$kenka <- as.numeric(students2014$kenka)
+```
+
+
+*** =sample_code
+```{r}
+# students2014 is available
+
+# Create a summary of a factor
+summary(students2014$sukup)
+
+# Create a summary of a numeric
+summary(students2014$ika)
+
+# Create a summary of 'pituus' in 'students2014'
+
+
+# Create a summary of the data.frame 'students2014'
+
+
+
+```
+
+*** =solution
+```{r}
+
+# Create a summary of a factor object
+summary(students2014$sukup)
+
+# Create a summary of a numeric object
+summary(students2014$ika)
+
+# Create a summary of 'pituus' in 'students2014'
+summary(students2014$pituus)
+
+# Create a summary of the data.frame 'students2014'
+summary(students2014)
+
+
+
+```
+
+*** =sct
+```{r}
+test_output_contains("summary(students2014$pituus)", incorrect_msg = "Please call summary() on the numeric object students2014$pituus.")
+test_output_contains("summary(students2014)", incorrect_msg="Please call summary() on the data.frame object `students2014`")
+
+test_error()
+success_msg("Well done!")
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1
+
+## Looping
+
+In programming, often there is the need to repeat an action multiple times. In statistical programming you might for example have a theory you wish to explore by simulation.
+
+The **for-loop** is perhaps the most common loop in programming. The structure of a for-loop is:
+
+```
+for (counter in vector) {
+  commands
+  more commands
+}
+```
+
+The for-loop iterates trough the values of a vector by changing the value of the counter one at a time. The counter first takes on the first value, then the second and so on. 
+
+Inside the curly braces is the *body* of the loop, which can contain regular commands such as function calls. The current value of the counter can be used there. The commands are repeated until the counter has taken all the values of the vector.
+
+
+*** =instructions
+- Loop though the character values using the examle code. Remember that here in DataCamp, executing a command over multiple lines is done by selecting all the lines with a mouse first and then hitting `Ctrl+Enter` normally. Alternatively you could also click submit to execute the whole script.R
+- Loop through integer values using the example code. 
+- In an honor of the legendary electronic duo *Daft Punk* and their 2001 album *Discovery*, construct a for-loop that prints out "One more time!" 27 times.
+- Hints: (1) Remember that `1:n` creates an integer vector of length n. (2) Inside the loop body you have to use the `print()` function to print.
+
+*** =hint
+- It does not matter what name you give to your counter. You can for example use `i` as is done in the second example.
+- In this exercise you don't need to use the values of your counter.
+- Remember to use quotation marks to print characters.
+
+
+*** =pre_exercise_code
+```{r}
+# no pec
+```
+
+*** =sample_code
+```{r}
+# Loop through and print the characters a, b, c, d
+for(letter in c("a","b","c","d")) {
+  print(letter)
+}
+
+# Loop through integers 1, 2, 3, 4, 5
+for(i in 1:5) {
+  print(i + 5)
+}
+
+# Write a for-loop that prints out "One more time!" 27 times
+
+
+
+
+
+```
+
+*** =solution
+```{r}
+# loop through characters a,b,c,d
+for(letter in c("a","b","c","d")) {
+  print(letter)
+}
+
+# loop through integers 1, 2, 3, 4, 5
+for(i in 1:5) {
+  print(i + 5)
+}
+
+# Write a for-loop that prints out "One more time!" 27 times
+for(i in 1:27) {
+  print("One more time!")
+}
+
+
+```
+
+*** =sct
+```{r}
+# submission correctness tests
+
+test_output_contains("'One more time!'", times = 27, incorrect_msg = "Did you write a for-loop that prints out 'One more time!' 27 times?")
+
+# test if the students code produces an error
+test_error()
+
+# Final message the student will see upon completing the exercise
+success_msg("Excellent work! Repetition is the key to success :)")
+
+```
+
+
+
+
+--- type:NormalExercise lang:r xp:100 skills:1
+
+## Packages in R
+
+Welcome to chapter 10: **Regression**. We'll start with an important R feature - packages. 
+
+There are a lot of functions in R. But actually, the functions in R come from a standard set of *packages*. A package is simply a collection of R functions. Besides the basic packages, you can install and use (or develop!) other packages too. 
+
+You can install packages through CRAN. What is CRAN? The answer can be found from their website [https://cran.r-project.org/](https://cran.r-project.org/): 
+> CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R. 
+
+List of available CRAN packages can be seen [here](https://cran.r-project.org/web/packages/available_packages_by_name.html). Because the packages are made by different R users, the codes may have some style differences. In those cases, one needs to rely in the documentation of the code.
+
+If you have R in your own computer, you can install packages with code `install.packages("name_of_the_package")`. But because we are working in DataCamp, the packages are already installed for you. So we don't need to worry about installation for now.
+
+To use the installed packages, you need to access them. This is done by calling `library(name_of_the_package)`.
+
+*** =instructions
+- One of the most famous and used packages outside the basic R is `ggplot2`. The `ggplot2` packages is a plotting system for R, and it draws pretty pictures for you with small effort. 
+- The `ggplot2` package has a website [http://ggplot2.org/](http://ggplot2.org/) where you can see documentation about the package. 
+- Execute the access code for `ggplot2`.
+- Draw a plot of gender and points. The `fill` argument adds a legend to the plot. 
+- Create the `grades` object.
+- Do a plot of `grades` and `attitude`. Set `grades` as a legend.
+
+*** =hint
+- Copy the code of the `qplot()` function. and change `gender` to `grades` and `points` to `attitude`. Remember to change the `fill` argument also.
+
+
+*** =pre_exercise_code
+```{r}
+learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
+```
+
+*** =sample_code
+```{r}
+# learning2014 is available 
+
+# Access ggplot2
+library(ggplot2)
+
+# Draw a plot of gender and points
+qplot(gender, points, data=learning2014, geom="boxplot", fill=gender)
+
+# Create the grades factor
+grades <- cut(learning2014$points, breaks = c(0, 11, 15, 19, 23, 27, 33), include.lowest = TRUE)
+
+# Draw a plot of grades and attitude
+
+
+```
+
+*** =solution
+```{r}
+#learning2014 is available 
+
+# Access ggplot2
+library(ggplot2)
+
+# Draw a plot of gender and points
+qplot(gender, points, data=learning2014, geom="boxplot", fill=gender)
+
+# Create the grades factor
+grades <- cut(learning2014$points, breaks = c(0, 11, 15, 19, 23, 27, 33), include.lowest = TRUE)
+
+# Draw a plot of grades and attitude
+qplot(grades, attitude, data=learning2014, geom="boxplot", fill=grades)
+
+```
+
+*** =sct
+```{r}
+# test_function("qplot", args=c("x", "y", "fill"), incorrect_msg = "Did you draw a plot of `grades` and `attitude`?")
+
+test_error()
+
+# Final message the student will see upon completing the exercise
+success_msg("You have the keys do anything. Awesome!")
+
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1
+
+## Create your own functions
+
+There are countless of ready-made functions for you in R. At this point of the course, we have used many functions, for example like `plot()`, `mean()` and `rnorm()`. But it is possible to create your own functions too. Now we will look at the definition of a simple function and learn how to use it (*call* it).
+
+A little recap of functions:
+Functions usually have one or more arguments, for which the user can define values when calling the function. Multiple arguments are separated with a comma. The arguments have names, which can (and often should) be used when specifying their values.
+
+
+*** =instructions
+- Look at the definition of the `apple_count()` function and execute the function call that is defined.
+- Create object `my_apples` by directly assigning the output of `apple_count()` to it. Call `apple_count()` with `new_apples = 10` and `apples_stock = 2`. Print `my_apples` to see the output of the function.
+- Some of the apples are gone bad! Worms! Create a function `good_apples_count` that takes two arguments: `apples` and `bad_apples` and returns the number of apples you have left after the count is **reduced** by an amout set by `bad_apples` (due to a worm attack). Set the number of bad apples to 4 by default.
+- Call your ` good_apples_count()` function on `my_apples` to find out how many good apples you have left.
+
+*** =hint
+- The answer for `my_apples` is of the form: `my_apples <- apple_count(arg1 = ?, arg2 = ?)`
+- See how a new function is created by looking the code of `apple_count`. 
+- The amount of good apples is `apples` - `bad_apples`.
+- You can set the default value in `function(arg1 = *insert_default_value_here*, ...) ...`
+
+*** =pre_exercise_code
+```{r}
+apple_count <- function(new_apples, apples_stock = 5) return(new_apples + apples_stock)
+```
+
+*** =sample_code
+```{r}
+# Create a simple function with two arguments, of which 'apples_stock' has a default value (5)
+apple_count <- function(new_apples, apples_stock = 5) return(new_apples + apples_stock)
+
+# Call the apple_count() function. Can you guess the result?
+apple_count(new_apples = 2)
+
+# Call apple_count() to create the object 'my_apples'. Print the results.
+my_apples <- 
+
+
+# New function here!
+good_apples_count <-
+
+# How many good apples do you have?
+
+  
+```
+
+*** =solution
+```{r}
+# Create a simple function with two arguments, of which 'apples_stock' has a default value (5)
+apple_count <- function(new_apples, apples_stock = 5) return(new_apples + apples_stock)
+
+# Call the apple_count() function. Can you guess the result?
+apple_count(new_apples = 2)
+
+# Call apple_count() to create the object 'my_apples'. Print the results.
+my_apples <- apple_count(10, apples_stock = 2)
+my_apples
+
+# New function here!
+good_apples_count <- function(apples, bad_apples = 4) return(apples - bad_apples)
+
+# How many good apples do you have?
+good_apples_count(my_apples)
+  
+```
+
+*** =sct
+```{r}
+test_object("my_apples", incorrect_msg ="Did you save results of `apple_count()` to `my_apple`?")
+test_output_contains(" good_apples_count(my_apples)", incorrect_msg ="Did you use `good_apples_count()` to `my_apples`?")
+
+test_error()
+success_msg("Not eating worms tonight! Nicely done!")
+```
+
