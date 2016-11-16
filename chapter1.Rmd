@@ -14,9 +14,9 @@ Researchers and experts often use programming to visualize and explore data and 
 Follow the instructions below to complete the exercise.
 
 *** =instructions
-- Take a peek at the code written on the right in script.R. When you opened this exercise, the code gave your computer the instructions to (1) load a dataset and (2) produce the graphic next to it.
+- Take a peek at the code written on the right in script.R. When executed, the code gives your computer the instructions to (1) load a dataset and (2) produce the graphic next to it.
 - Could you tell which lines of code relates to (1) or (2)? A hashtag marks a line as a comment line.
-- When you're done pondering, simply click 'Submit Answer' and move on to the first exercise!
+- When you're done pondering, click 'Submit Answer' to execute the code and move on to the next exercise!
 
 ***= hint
 - Simply press 'Submit Answer' when you're ready to move forward.
@@ -30,8 +30,6 @@ learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning20
 # Access the ggplot2 library
 library(ggplot2)
 
-# A scatter plot of attitude and exam points
-qplot(attitude, points, data = learning2014) + geom_smooth(method = "lm")
 ```
 
 *** =sample_code
@@ -44,8 +42,8 @@ learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning20
 # Access the ggplot2 library
 library(ggplot2)
 
-# A scatter plot of attitude and exam points
-qplot(attitude, points, data = learning2014) + geom_smooth(method = "lm")
+# A scatter plot of students attitude and exam points
+qplot(attitude, points, col = gender, data = learning2014) + geom_smooth(method = "lm")
 
 ```
 
@@ -59,14 +57,14 @@ learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning20
 # Access the ggplot2 library
 library(ggplot2)
 
-# A scatter plot of attitude and exam points
-qplot(attitude, points, data = learning2014) + geom_smooth(method = "lm")
+# A scatter plot of students attitude and exam points
+qplot(attitude, points, col = gender, data = learning2014) + geom_smooth(method = "lm")
 
 ```
 
 *** =sct
 ```{r}
-success_msg("Great! Move on to the first exercise.")
+success_msg("Great! Move on to the next exercise.")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:cdaeb146ec
