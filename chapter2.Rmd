@@ -694,9 +694,9 @@ success_msg("You have the keys do anything. Awesome!")
 
 ## Create your own functions
 
-There are countless of ready-made functions for you in R. At this point of the course, we have used many functions, for example `str()`, `summary()`, `head()`, `plot()` and `mean()`. But it is possible to create your own functions too. Now we will look at the definition of a simple function and learn how to use it (*call* it).
+There are countless ready-made functions in R. You have already used many functions, such as `str()`, `summary()`, `head()`, `plot()` and `mean()`. But it is possible to create your own functions too. Now we will look at the definition of a simple function and learn how to use it (*call* it).
 
-Firts a little recap on using functions:
+First a little recap on using functions:
 Functions usually have one or more arguments, for which the user can define values when calling the function. Multiple arguments are separated with a comma. The arguments have names, which can (and often should) be used when calling the function.
 
 
