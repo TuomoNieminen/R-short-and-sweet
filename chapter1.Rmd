@@ -15,7 +15,7 @@ Follow the instructions below to complete the exercise.
 
 *** =instructions
 - Take a peek at the code written on the right in script.R. When you opened this exercise, the code gave your computer the instructions to (1) load a dataset and (2) produce the graphic next to it.
-- Could you tell which lines of code relates to (1) or (2)? Hint: A hashtag marks a line as a comment line.
+- Could you tell which lines of code relates to (1) or (2)? A hashtag marks a line as a comment line.
 - When you're done pondering, simply click 'Submit Answer' and move on to the first exercise!
 
 ***= hint
@@ -24,26 +24,28 @@ Follow the instructions below to complete the exercise.
 
 *** =pre_exercise_code
 ```{r}
-data_url <- "http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS-data.txt"
+# load data
+learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
 
-students2014 <- read.table(data_url, sep="\t", header=TRUE)
+# Access the ggplot2 library
+library(ggplot2)
 
-with(students2014, plot(x = kenka, y = pituus, col = sukup, pch = 20, main = "Scatter plot of student shoesize and height \n(color indicates sex)"))
+# A scatter plot of attitude and exam points
+qplot(attitude, points, data = learning2014) + geom_smooth(method = "lm")
 ```
 
 *** =sample_code
 ```{r}
 # This is an example of the power of R
 
-# Create a character object holding data location
-data_url <- "http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS-data.txt"
+# load data
+learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
 
-# Load and save data with the read.table() function
-students2014 <- read.table(data_url, sep = "\t", header = TRUE)
+# Access the ggplot2 library
+library(ggplot2)
 
-# Draw a graph of student shoesize and height using plot()
-with(students2014, plot(x = kenka, y = pituus, col = sukup, pch = 20, main = "Scatter plot of student shoesize and height \n(color indicates sex)"))
-
+# A scatter plot of attitude and exam points
+qplot(attitude, points, data = learning2014) + geom_smooth(method = "lm")
 
 ```
 
@@ -51,14 +53,14 @@ with(students2014, plot(x = kenka, y = pituus, col = sukup, pch = 20, main = "Sc
 ```{r}
 # This is an example of the power of R
 
-# Create a character object holding data location
-data_url <- "http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS-data.txt"
+# load data
+learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
 
-# Load and save data with the read.table() function
-students2014 <- read.table(data_url, sep = "\t", header = TRUE)
+# Access the ggplot2 library
+library(ggplot2)
 
-# Draw a graph of student shoesize and height using plot()
-with(students2014, plot(x = kenka, y = pituus, col = sukup, pch = 20, main = "Scatter plot of student shoesize and height \n(color indicates sex)"))
+# A scatter plot of attitude and exam points
+qplot(attitude, points, data = learning2014) + geom_smooth(method = "lm")
 
 ```
 
@@ -476,8 +478,8 @@ Here you will get to apply some functions that are helpful for inspecting data: 
 *** =instructions
 - Execute the function `head()` and see the results
 - Inspect the data types in the `students2014` data with the function `str()`
-- Use the $-sign to access the students shoe size (`kenka`) in `students2014` data
 - Note that `students2014$ika` prints out all the ages of the students in `students2014`
+- Use the $-sign to access the students shoe size (column `kenka`) in `students2014` data
 
 *** =hint
 - The data is stored in object `students2014`
@@ -565,9 +567,9 @@ You can use the function `str()` (str is short for structure) to find out what d
 
 *** =instructions
 - Create character object `my_character` by assigning your initials in it.
-- Assign the number 10.5 in `my_numeric_object`. Note that the decimal separator in R is dot instead of comma. 
-- Create the object `my_boolean` by executing the line. Note that with boolean values, no quotation marks are needed.
-- Change the value of `my_boolean` to `TRUE`
+- Assign the number 10.5 to `my_numeric`. Note that the decimal separator in R is dot instead of comma. 
+- Create the object `my_logical` by executing the line. Note that with boolean values, no quotation marks are needed.
+- Change the value of `my_logical` to `TRUE`
 - Inspect the data types of the objects with `str()`.
 
 *** =hint
@@ -584,8 +586,8 @@ You can use the function `str()` (str is short for structure) to find out what d
 ```{r}
 # Create three objects with different data types
 my_character <-
-my_numeric_object <-
-my_boolean <- FALSE
+my_numeric <-
+my_logical <- FALSE
 
 # See how each object looks with the function str()
 
@@ -598,25 +600,25 @@ my_boolean <- FALSE
 ```{r}
 # Create three objects with different data types
 my_character <- "A.B.C."
-my_numeric_object <- 10.5
-my_boolean <- TRUE
+my_numeric <- 10.5
+my_logical <- TRUE
 
 # See how each object looks with the function str()
 str(my_character)
-str(my_numeric_object)
-str(my_boolean)
+str(my_numeric)
+str(my_logical)
 
 ```
 
 *** =sct
 ```{r}
 test_object("my_character", eval=FALSE, incorrect_msg = "Did you assign your initials to `my_character`?")
-test_object("my_numeric_object", incorrect_msg="Did you assign the correct value to `my_numeric_object`?")
-test_object("my_boolean", incorrect_msg="Did you change the value of `my_boolean`?")
+test_object("my_numeric", incorrect_msg="Did you assign the correct value to `my_numeric`?")
+test_object("my_logical", incorrect_msg="Did you change the value of `my_logical`?")
 
 test_output_contains("str(my_character)", incorrect_msg = "Did you use `str()` on `my_character`?")
-test_output_contains("str(my_numeric_object)", incorrect_msg = "Did you use `str()` on `my_numeric_object`?")
-test_output_contains("str(my_boolean)", incorrect_msg = "Did you use `str()` on `my_boolean`?")
+test_output_contains("str(my_numeric)", incorrect_msg = "Did you use `str()` on `my_numeric`?")
+test_output_contains("str(my_logical)", incorrect_msg = "Did you use `str()` on `my_logical`?")
 
 # test if the students code produces an error
 test_error()
@@ -633,7 +635,7 @@ Another one of R's data types is called factor. Factors contain numbers, but for
 - "Strongly disagree" = 1
 - "Strongly agree" = 5
 
-In R is is also possible to create factors from numerical objects using the function `cut()`, which splits a variable into categories. It has a mandatory argument `breaks`, which defines the cutting points of the categories.  
+In R it is also possible to create factors from numerical objects by using the function `cut()`, which splits a variable into categories. It has a mandatory argument `breaks`, which defines the cutting points of the categories.  
 
 *** =instructions
 - Create objects `student_age` and `student_age_cut`
@@ -725,11 +727,11 @@ success_msg("Good work!")
 
 A vector is an object containing multiple elements of the same data type. Vectors are quite important in R. The columns of a data frame (such as `student2014`) are vectors.
 
-You can create vectors by combining values of the same data type, using the function `c()`. In this exercise you will create your own vectors.  
+You can create your own vectors by combining values of the same data type, using the function `c()`.  
 
 *** =instructions
 - See and execute the examples on how to create a vector with `c()`.
-- Create a character vector `my_vector`.
+- Create a character vector `character_vector`.
 - Create a vector `logical_vector` with boolean values `TRUE, FALSE, TRUE, FALSE`.
 - Print the contents of `logical_vector`.
 
@@ -752,7 +754,7 @@ c(2, 3, 4, 5)
 c(0.1, 0.2, 5.84, 0.7)
 
 # Let's create one with characters and save it to a object
-my_vector <- c("a", "b", "c", "d")
+character_vector <- c("a", "b", "c", "d")
 
 # Create a logical vector and print it
 
@@ -769,7 +771,7 @@ c(2, 3, 4, 5)
 c(0.1, 0.2, 5.84, 0.7)
 
 # Let's create one with characters and save it to a object
-my_vector <- c("a", "b", "c", "d")
+character_vector <- c("a", "b", "c", "d")
 
 # Create a logical vector and print it
 logical_vector <- c(TRUE, FALSE, TRUE, FALSE)
