@@ -1,6 +1,6 @@
 ---
 title       : Gettin jiggy with it
-description : Logic is the beginning of wisdom, not the end
+description : Deepen your R knowledge.
 
 
 --- type:NormalExercise lang:r xp:100 skills:1, 3 key:8d3c2b3c6c
@@ -93,13 +93,15 @@ The help page of a function called *func* can be opened by two methods: `help(fu
 
 
 *** =instructions
+- Create objects `shoesize` and `height`
 - Open the help page of `plot` by writing `?plot` directly to the console and press enter.
-- Draw a (scatter) plot of student shoesize versus height, with shoesize on the x axis and height on the y axis. 
+- Use `plot()` to draw a (scatter) plot of student shoesize versus height, with shoesize on the x axis and height on the y axis. 
 - Use the information on the help page and add this main title to the plot: "Scatter plot of student shoesize versus height".
 
 
 *** =hint
 - Please note that the tests are sensitive to capital letters and missing spaces etc.
+- If you need examples, you can do an internet search for "scatter plot r"
 
 
 *** =pre_exercise_code
@@ -425,7 +427,7 @@ test_output_contains("c(1,3,2)<3", incorrect_msg = "Please make the necessary ad
 test_error()
 
 # Final message the student will see upon completing the exercise
-success_msg("Well done! Remember Spock's words: Logic is the beginning of wisdom, not the end.")
+success_msg("Well done! Logic is the beginning of wisdom, not the end. - Spock")
 
 ```
 
@@ -540,7 +542,8 @@ Inside the curly braces is the *body* of the loop, which can contain regular com
 
 
 *** =instructions
-- Loop though the character values using the example code. Here in DataCamp, executing a command over multiple lines is done by selecting (painting) all the lines with a mouse first and then hitting `Ctrl+Enter` normally. Alternatively you could also click submit to execute the whole script.R
+- Here in DataCamp, executing a command over multiple lines is done by selecting (painting) all the lines with a mouse first and then hitting `Ctrl+Enter` normally. Alternatively you could also click submit to execute the whole script.R
+- Loop though the character values using the example code. 
 - Loop through integer values using the example code. 
 - In an honor of the legendary electronic duo *Daft Punk* and their 2001 album *Discovery*, construct a for-loop that prints out "One more time!" 27 times.
 - Hints: (1) Remember that `1:n` creates an integer vector of length n. (2) Inside the loop body you have to use the `print()` function to print.

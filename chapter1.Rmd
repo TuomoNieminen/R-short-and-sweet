@@ -300,9 +300,9 @@ R has many functions ready for you to use. Functions are how you're actually goi
 Here we will do a little bit of magic using data that will become more familiar to you later on.  
 
 *** =instructions
-- Study and execute the examples in the R script. Don't worry about the `$` -sign for now, we will get to that later.
-- Follow the examples and compute the mean age of students.
-- When done, click 'Submit Answer'.
+- Create object `student_height` and compute the mean height of students. Don't worry about the `$` -sign for now, we will get to that later.  
+- Create object `student_age` and compute the mean age of students  
+- When done, click 'Submit Answer'  
 
 *** =hint
 - Use the function `mean()` and the object `student_age` like in the example on line 7 of script.R.
@@ -387,12 +387,14 @@ Functions usually have more than one possible argument. Some of the arguments ca
 Multiple arguments are separated with a comma.  
 
 *** =instructions
-- Execute the example codes where the function `head()` is used to explore the first couple observations of the `students2014` dataset.
+- Study and execute the example codes where the function `head()` is used to explore the first couple observations of the `students2014` dataset.
 - Create object `first_ten_students` by calling `head()` with `n = 10`.
 
 *** =hint
-- Remember to separate the arguments with a comma
+- Directly assign the output of `head()` to `first_ten_students` to create the object
 - The answer is of the form: `first_ten_students <- head(arguments_here)`
+- Remember to separate function arguments with a comma
+
 
 
 *** =pre_exercise_code
@@ -428,7 +430,7 @@ head(students2014, n = 3) # recommended style
 head(students2014, 3)     # style usually not recommended
 head(n = 3, students2014) # style not recommended
 
-# Save the first ten observations of the data
+# Save the first ten observations of the data to an object
 first_ten_students <- 
 
 
@@ -449,6 +451,7 @@ head(students2014, n = 3) # recommended style
 head(students2014, 3)     # style usually not recommended
 head(n = 3, students2014) # style not recommended
 
+# Save the first ten observations of the data to an object
 first_ten_students <- head(students2014, n = 10)
 
 
@@ -544,7 +547,7 @@ test_output_contains("students2014$kenka", incorrect_msg = "Did you use the $-si
 test_error()
 
 # Final message the student will see upon completing the exercise
-success_msg("Good work!")
+success_msg("Well done! You are really getting the hang of it.")
 
 ```
 
@@ -614,8 +617,8 @@ test_object("my_character", eval=FALSE, incorrect_msg = "Did you assign your ini
 test_object("my_numeric", incorrect_msg="Did you assign the correct value to `my_numeric`?")
 test_object("my_logical", incorrect_msg="Did you change the value of `my_logical`?")
 
-test_output_contains("str(my_character)", incorrect_msg = "Did you use `str()` on `my_character`?")
-test_output_contains("str(my_numeric)", incorrect_msg = "Did you use `str()` on `my_numeric`?")
+test_output_contains("str(my_character)", incorrect_msg = "Did you use `str()` on `my_character`?")  
+test_output_contains("str(my_numeric)", incorrect_msg = "Did you use `str()` on `my_numeric`?")  
 test_output_contains("str(my_logical)", incorrect_msg = "Did you use `str()` on `my_logical`?")
 
 # test if the students code produces an error
