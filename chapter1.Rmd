@@ -142,7 +142,7 @@ Let's continue with something simple. R can do amazing things like scrape websit
 - Subtraction: `-`
 - Multiplication: `*`
 - Division: `/`
-- Exponentiation: `^`
+- Exponentiation: `^` (or `**`)
 
 The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9. With this knowledge, follow the instructions below to complete the exercise.
 
@@ -293,7 +293,7 @@ success_msg(paste0("Great job ", my_name, ". ", my_message, "!"))
 --- type:NormalExercise lang:r xp:100 skills:1 key:dc84cbe247
 ## Functions
 
-In R you operate on objects using *functions*. A function is a special kind of object that can be *called* by typing it's name and giving it the necessary *arguments* inside parenthesis. When a function is called, it will perform an action.
+In R you operate on objects using *functions*. A function is a special kind of object that uses other objects as inputs, performs operations, and usually outputs a result. The inputs of a function are called *arguments*. A Function is *called* by typing it's name and giving it the necessary arguments inside parenthesis. When a function is called, it will perform an action.
 
 R has many functions ready for you to use. Functions are how you're actually going to do all the magic.
 
@@ -388,7 +388,7 @@ Multiple arguments are separated with a comma.
 
 *** =instructions
 - Study and execute the example codes where the function `head()` is used to explore the first couple observations of the `students2014` dataset.
-- Create object `first_ten_students` by calling `head()` with `n = 10`.
+- Using the assign operator `<-`, create object `first_ten_students` by calling `head()` with `n = 10`.
 
 *** =hint
 - Directly assign the output of `head()` to `first_ten_students` to create the object
@@ -471,7 +471,6 @@ success_msg("Great job!")
 ## Data frames
 
 In R, the basic idea is to use *functions* to operate on objects. The most common object to operate on is the `data frame` object, which stores data in tabular form.  
-
 The columns in data frames are vectors. Data frames can contain multiple vectors with different data types. You will soon learn more about vectors and data types.
 
 Here you will get to apply some functions that are helpful for inspecting data: `head()` and `str()`. You will also learn how to access the columns of a data frame using the $-sign.  
@@ -640,7 +639,7 @@ In R it is also possible to create factors from numerical objects by using the f
 
 *** =instructions
 - Create objects `student_age` and `student_age_cut`
-- use `str()` to inspect `student_age_cut`
+- Use `str()` to inspect `student_age_cut`
 - Use `head()` to print the first six values of `student_age`
 - Use `head()` to print the first six values of `student_age_cut`
 

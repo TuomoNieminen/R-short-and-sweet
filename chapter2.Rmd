@@ -536,13 +536,13 @@ for (counter in vector) {
 }
 ```
 
-The for-loop iterates trough the values of a vector by changing the value of the counter one at a time. The counter first takes on the first value, then the second and so on. 
+The for-loop iterates trough the values of a vector by changing the value of the counter one at a time. The counter first takes on the first value of the vector, then the second and so on. 
 
-Inside the curly braces is the *body* of the loop, which can contain regular commands such as function calls. The current value of the counter can be used there. The commands are repeated until the counter has taken all the values of the vector.
+Inside the curly braces is the *body* of the loop, which can contain regular commands such as function calls. The current value of the counter can be used there. All the commands inside the body are repeated until the counter has taken all the values of the vector.
 
 
 *** =instructions
-- Here in DataCamp, executing a command over multiple lines is done by selecting (painting) all the lines with a mouse first and then hitting `Ctrl+Enter` normally. Alternatively you could also click submit to execute the whole script.R
+- **Please note!** Here in DataCamp, executing a command over multiple lines is done by selecting (painting) the lines with a mouse first and then hitting `Ctrl+Enter` normally. Alternatively you could also click submit to execute the whole script.R
 - Loop though the character values using the example code. 
 - Loop through integer values using the example code. 
 - In an honor of the legendary electronic duo *Daft Punk* and their 2001 album *Discovery*, construct a for-loop that prints out "One more time!" 27 times.
@@ -705,16 +705,16 @@ Functions usually have one or more arguments, for which the user can define valu
 
 *** =instructions
 - Look at the definition of the `apple_count()` function and execute the function call that is defined.
-- Create object `my_apples` by directly assigning the output of `apple_count()` to it. Call `apple_count()` with `new_apples = 10` and `apples_stock = 2`. Print `my_apples` to see the output of the function.
-- Some of the apples are gone bad! Worms! Create a function `good_apples_count` that takes two arguments: `apples` and `bad_apples`. The function should return the number of apples you have left after the count is **reduced** by an amout set by `bad_apples` (due to a worm attack).
--Set the number of bad apples to 4 by default.
+- Create object `my_apples` by directly assigning the output of `apple_count()` to it. Call `apple_count()` with `new_apples = 10` and `apples_stock = 2`.  
+- Print `my_apples` to see the output of the function.
+- Some of the apples are gone bad! Worms! Create a function `good_apples_count` that takes two arguments: `apples` and `bad_apples`. The function should return the number of apples you have left after the count is **reduced** by an amout set by `bad_apples` (due to a worm attack). Set the number of bad apples to 4 by default.
 - Call your ` good_apples_count()` function on `my_apples` to find out how many good apples you have left.
 
 *** =hint
 - The answer for `my_apples` is of the form: `my_apples <- apple_count(arg1 = ?, arg2 = ?)`
 - See how a new function is created by looking the code of `apple_count`. 
 - The amount of good apples is `apples` - `bad_apples`.
-- You can set the default value in `function(arg1, arg2 = *insert_default_value_here*)`
+- You can set the default value: `function(arg1, arg2 = *insert_default_value_here*) ...`
 
 *** =pre_exercise_code
 ```{r}
