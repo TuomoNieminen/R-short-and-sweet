@@ -1,8 +1,8 @@
-# DataCamp Template Course
+# R Short and Sweet
 <a href=https://www.datacamp.com//teach/repositories/73823726/go target="_blank"><img src="https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/course_button.png" width="150"></a>
 <a href=https://www.datacamp.com//teach/repositories target="_blank"><img src="https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/dashboard_button.png" width="150"></a>
 
-This an automatically generated <a href=https://www.datacamp.com target="_blank">DataCamp</a> course. You can start from these template files to create your own course.
+This a <a href=https://www.datacamp.com target="_blank">DataCamp</a> course created for University of Helsinki by Tuomo Nieminen and Emma Kämäräinen. 
 
 Changes you make to this GitHub repository are automatically reflected in the linked DataCamp course. This means that you can enjoy all the advantages of version control, collaboration, issue handling ... of GitHub.
 
