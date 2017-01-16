@@ -5,6 +5,8 @@ description : Basics of R, the amazing statistical programming language. Do not 
 --- type:NormalExercise lang:r xp:50 skills:1  key:a253f2e756
 ## What is R?
 
+Welcome to part 1 of **R Short and Sweet**: *Basics of R*.
+
 R is a programming language designed for statistical analysis. R is completely open source and all analysis done with R are reproduciple and easy to share. R is flexible, powerful and includes implementations of the latest research. 
 
 Because of these reasons, R is a very popular language among the scientific community. R is however also widely [used](http://blog.revolutionanalytics.com/2014/05/companies-using-r-in-2014.html) for data analysis and visualisations by companies such as Google, Facebook, Twitter and Reaktor. R is perfect for data science.
@@ -15,8 +17,8 @@ Follow the instructions below to complete the exercise.
 
 *** =instructions
 - Take a peek at the code written on the right in script.R. When executed, the code gives your computer the instructions to (1) load a dataset and (2) produce the graphic next to it.
-- Could you tell which lines of code relates to (1) or (2)? A hashtag marks a line as a comment line.
-- When you're done pondering, click 'Submit Answer' to execute the code and move on to the next exercise!
+- Could you tell which lines of code relates to (1) or (2)? A hashtag marks a line as a comment line. 
+- When you're done pondering, click 'Submit Answer' to execute the code and move on to the next exercise! (You do not need to make any changes to the code in this exercise)
 
 ***= hint
 - Simply press 'Submit Answer' when you're ready to move forward.
@@ -293,11 +295,11 @@ success_msg(paste0("Great job ", my_name, ". ", my_message, "!"))
 --- type:NormalExercise lang:r xp:100 skills:1 key:dc84cbe247
 ## Functions
 
-In R you operate on objects using *functions*. A function is a special kind of object that uses other objects as inputs, performs operations, and usually outputs a result. The inputs of a function are called *arguments*. A Function is *called* by typing it's name and giving it the necessary arguments inside parenthesis. When a function is called, it will perform an action.
+In R you operate on objects using *functions*. A function is a special kind of object that uses other objects as inputs, performs operations, and usually outputs a result. The inputs of a function are called *arguments*.  
 
-R has many functions ready for you to use. Functions are how you're actually going to do all the magic.
+A Function is *called* by typing it's name and giving it the necessary arguments inside parenthesis. When a function is called, it will perform an action.
 
-Here we will do a little bit of magic using data that will become more familiar to you later on.  
+R has many functions ready for you to use. Functions are how you're actually going to do all the magic. Here we will do a little bit of magic using data that will become more familiar to you later on.  
 
 *** =instructions
 - Create object `student_height` and compute the mean height of students. Don't worry about the `$` -sign for now, we will get to that later.  
