@@ -5,7 +5,7 @@ description : Basics of R, the amazing statistical programming language. Do not 
 --- type:NormalExercise lang:r xp:50 skills:1  key:a253f2e756
 ## What is R?
 
-Welcome to part 1 of **R Short and Sweet**: *Basics of R*.
+Welcome to part 1 of **R Short and Sweet**: Basics of R.
 
 R is a programming language designed for statistical analysis. R is completely open source and all analysis done with R are reproduciple and easy to share. R is flexible, powerful and includes implementations of the latest research. 
 
