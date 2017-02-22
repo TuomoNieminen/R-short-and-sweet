@@ -1,8 +1,7 @@
 title            : R Short and Sweet
 instructors      :
  - tuomo.a.nieminen@gmail.com
- - emma.kamarainen@outlook.com
-description      : This DataCamp course has been developed by Tuomo Nieminen and Emma Kämäräinen for University of Helsinki. This course gives a brief introduction to R, the programming language for statistical analysis.
+description      : A brief introduction to R
 university       : DataCamp
 difficulty_level : 1
 time_needed      : 4 hour
