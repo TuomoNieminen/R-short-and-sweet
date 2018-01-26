@@ -1,6 +1,7 @@
 ---
 title       : Hello R
 description : Basics of R, the amazing statistical programming language. Do not be afraid of the art of programming!
+---
 
 ## What is R?
 
@@ -19,7 +20,7 @@ Because of these reasons, R is a very popular language among the scientific comm
 
 Researchers and experts use R to visualize and explore data and implement new statistical methods. The purpose of this short course is to expose you to the basics of programming and data analysis with R.
 
-Choose the correct answer:
+Choose the correct answer.  
 
 `@possible_answers`
 
