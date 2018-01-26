@@ -1,16 +1,9 @@
 ---
 title       : Hello R
 description : Basics of R, the amazing statistical programming language. Do not be afraid of the art of programming!
----
 
+--- type:PureMultipleChoiceExercise lang:r xp:50 skills:1 
 ## What is R?
-
-```yaml
-type: PureMultipleChoiceExercise  
-lang: r  
-xp: 50  
-skills: 1  
-```
 
 Welcome to part 1 of **R Short and Sweet**: Hello R.
 
@@ -24,17 +17,17 @@ Choose the correct answer.
 
 `@possible_answers`
 
-- R is a programming language for statistical computing
-- R is open source
-- R is widely used for data science
-- [All of the above]
+- R is a programming language for statistical computing  
+- R is open source  
+- R is widely used for data science  
+- [All of the above]  
 
 `@feedbacks`
 
-- This is true, but not the correct answer
-- This is true, but not the correct answer
-- This is true, but not the correct answer
-- Correct!
+- This is true, but not the correct answer  
+- This is true, but not the correct answer  
+- This is true, but not the correct answer  
+- Correct!  
 
 
 --- type:NormalExercise lang:r xp:50 skills:1 
