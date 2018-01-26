@@ -6,10 +6,10 @@ description : Basics of R, the amazing statistical programming language. Do not 
 ## What is R?
 
 ```yaml
-type: PureMultipleChoiceExercise
-lang:r
-xp:50
-skills:1
+type: PureMultipleChoiceExercise  
+lang: r  
+xp: 50  
+skills: 1  
 ```
 
 Welcome to part 1 of **R Short and Sweet**: Hello R.
