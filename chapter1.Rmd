@@ -2,8 +2,14 @@
 title       : Hello R
 description : Basics of R, the amazing statistical programming language. Do not be afraid of the art of programming!
 
---- type:PureMultipleChoiceExercise lang:r xp:50 skills:1 
 ## What is R?
+
+```yaml
+type: PureMultipleChoiceExercise
+lang:r
+xp:50
+skills:1
+```
 
 Welcome to part 1 of **R Short and Sweet**: Hello R.
 
