@@ -2,7 +2,7 @@
 title       : Hello R
 description : Basics of R, the amazing statistical programming language. Do not be afraid of the art of programming!
 
---- type:NormalExercise lang:r xp:50 skills:1  key:a253f2e756
+--- type:PureMultipleChoiceExercise lang:r xp:50 skills:1 
 ## What is R?
 
 Welcome to part 1 of **R Short and Sweet**: Hello R.
@@ -11,14 +11,36 @@ R is a programming language designed for statistical analysis. R is completely o
 
 Because of these reasons, R is a very popular language among the scientific community. R is however also widely [used](http://blog.revolutionanalytics.com/2014/05/companies-using-r-in-2014.html) for data analysis and visualisations by companies such as Google, Facebook, Twitter and Reaktor. R is perfect for data science.
 
-Researchers and experts often use programming to visualize and explore data and implement new statistical methods. The purpose of this course is to expose you to the basics of programming and data analysis with R.
+Researchers and experts use R to visualize and explore data and implement new statistical methods. The purpose of this short course is to expose you to the basics of programming and data analysis with R.
+
+**Choose the correct answer**:
+
+`@possible_answers`
+
+- R is a programming language for statistical computing
+- R is open source
+- R is widely used for data science
+- [All of the above]
+
+`@feedbacks`
+
+- This is true, but not the correct answer
+- This is true, but not the correct answer
+- This is true, but not the correct answer
+- Correct!
+
+
+--- type:NormalExercise lang:r xp:50 skills:1 
+## Running R code
+
+R code can be written with a simple text editor. R code is just written instructions which the computer can understand. When you want the computer to make an action based on your R code, you must *run* the code (also called *executing*).
 
 Follow the instructions below to complete the exercise.
 
 *** =instructions
-- Take a peek at the code written on the right in script.R. When executed, the code gives your computer the instructions to (1) load a dataset and (2) produce the graphic next to it.
-- Could you tell which lines of code relates to (1) or (2)? A hashtag marks a line as a comment line. 
-- When you're done pondering, click 'Submit Answer' to execute the code and move on to the next exercise! (You do not need to make any changes to the code in this exercise)
+- On the right side, the script.R is a text editor which contains R code. When the code is *run*, it gives your computer the instructions to (1) load a dataset and (2) produce a graphic.
+- Click on 'Run code' to run the code.
+- Click 'Submit Answer' to move on to the next exercise! 
 
 ***= hint
 - Simply press 'Submit Answer' when you're ready to move forward.
@@ -29,19 +51,19 @@ Follow the instructions below to complete the exercise.
 # load data
 learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
 
-# Access the ggplot2 library
+# Access the ggplot2 package
 library(ggplot2)
 
 ```
 
 *** =sample_code
 ```{r}
-# This is an example of the power of R
+# This is a text editor which contains R code
 
 # load data
-learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
+learning2014 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
 
-# Access the ggplot2 library
+# Access the 'ggplot2' graphics package
 library(ggplot2)
 
 # A scatter plot of students attitude and exam points
@@ -51,12 +73,12 @@ qplot(attitude, points, col = gender, data = learning2014) + geom_smooth(method 
 
 *** =solution
 ```{r}
-# This is an example of the power of R
+# This is a text editor which contains R code
 
 # load data
 learning2014 <-  read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/learning2014.txt", sep = "\t", header = TRUE)
 
-# Access the ggplot2 library
+# Access the 'ggplot2' graphics package
 library(ggplot2)
 
 # A scatter plot of students attitude and exam points
