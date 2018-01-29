@@ -2,7 +2,7 @@
 title       : Hello R
 description : Basics of R, the amazing statistical programming language. Do not be afraid of the art of programming!
 
---- type:PureMultipleChoiceExercise lang:r xp:50 skills:1 
+--- type:PureMultipleChoiceExercise lang:r xp:50 skills:1 key:a253f2e756
 ## What is R?
 
 Welcome to part 1 of **R Short and Sweet**: Hello R.
@@ -35,7 +35,7 @@ Choose the correct answer.
 ```
 
 
---- type:NormalExercise lang:r xp:50 skills:1 
+--- type:NormalExercise lang:r xp:50 skills:1 key:59231c671b
 ## Running R code
 
 R code can be written with a simple text editor. R code is just written instructions which the computer can understand. When you want the computer to make an action based on your R code, you must *run* the code (also called *executing*).
