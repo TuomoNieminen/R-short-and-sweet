@@ -16,17 +16,17 @@ Researchers and experts use R to visualize and explore data and implement new st
 Choose the correct answer.  
 
 *** =possible_answers
-- R is a programming language for statistical computing  
-- R is open source  
-- R is widely used for data science  
-- [All of the above]  
+- R is a programming language for statistical computing
+- R is open source
+- R is widely used for data science
+- [All of the above]
 
 
 *** =feedbacks
-- This is true, but not the correct answer  
-- This is true, but not the correct answer  
-- This is true, but not the correct answer  
-- Correct!  
+- This is true, but not the correct answer
+- This is true, but not the correct answer
+- This is true, but not the correct answer
+- Correct!
 
 
 --- type:NormalExercise lang:r xp:50 skills:1 key:59231c671b
