@@ -29,10 +29,6 @@ Choose the correct answer.
 - This is true, but not the correct answer  
 - Correct!  
 
-***sct
-```{r}
-
-```
 
 
 --- type:NormalExercise lang:r xp:50 skills:1 
