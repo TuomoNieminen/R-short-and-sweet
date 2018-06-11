@@ -1,6 +1,6 @@
 # R Short and Sweet
-<a href=https://www.datacamp.com//teach/repositories/73823726/go target="_blank"><img src="https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/course_button.png" width="150"></a>
-<a href=https://www.datacamp.com//teach/repositories target="_blank"><img src="https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/dashboard_button.png" width="150"></a>
+<a href=https://www.datacamp.com/teach/repositories/73823726/go target="_blank"><img src="https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/course_button.png" width="150"></a>
+<a href=https://www.datacamp.com/teach/repositories target="_blank"><img src="https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/dashboard_button.png" width="150"></a>
 
 This a <a href=https://www.datacamp.com target="_blank">DataCamp</a> course created for University of Helsinki by Tuomo Nieminen and Emma Kämäräinen. 
 
@@ -9,7 +9,7 @@ Changes you make to this GitHub repository are automatically reflected in the li
 ## Workflow
 
 1. Edit the markdown and yml files in this repository. You can use GitHub's online editor or use <a href=https://git-scm.com/ target="_blank">git</a> locally and push your changes.
-2. Check out your build attempts on the <a href=https://www.datacamp.com//teach/repositories target="_blank">Teach Dashboard</a>.
+2. Check out your build attempts on the <a href=https://www.datacamp.com/teach/repositories target="_blank">Teach Dashboard</a>.
 3. Check out your automatically updated <a href=https://www.datacamp.com/teach/repositories/73823726/go target="_blank">course on DataCamp</a>
 
 ## Getting Started
